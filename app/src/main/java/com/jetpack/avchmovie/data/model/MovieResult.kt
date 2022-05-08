@@ -3,6 +3,7 @@ package com.jetpack.avchmovie.data.model
 import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
+import androidx.room.Relation
 import com.google.gson.annotations.SerializedName
 import com.jetpack.avchmovie.common.Constants
 import java.util.*
