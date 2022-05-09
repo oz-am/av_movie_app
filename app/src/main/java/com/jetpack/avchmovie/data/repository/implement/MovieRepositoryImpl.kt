@@ -19,7 +19,7 @@ class MovieRepositoryImpl @Inject constructor(private val movieDbApi: MovieDbApi
             emit(Resource.Loading<MovieResult>())
             val data: MovieResult?
             if (connectivity.isConnected()) {
-                data = movieDbApi.getMovies("8d6a13d4ff986513574e73180f498ed9", "en-US", 1, "comedy", false)
+                data = movieDbApi.getMovies("8d6a13d4ff986513574e73180f498ed9", "en-US", page, "comedy", false)
                 movieDatabaseDao.saveMovieResult(ObjectMapper.toMoviesResultEntity(data))
                 movieDatabaseDao.saveResults(ObjectMapper.toResultEntities(data.results, data.page))
             } else {
