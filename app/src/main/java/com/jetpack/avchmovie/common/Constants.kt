@@ -11,4 +11,5 @@ object Constants {
     const val RESULTS = "results"
     const val TOTAL_RESULTS = "total_results"
     const val TOTAL_PAGES = "total_pages"
+    const val POSTER_BASE_URL = "https://image.tmdb.org/t/p/w500"
 }

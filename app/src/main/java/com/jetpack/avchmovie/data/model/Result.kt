@@ -1,51 +1,28 @@
 package com.jetpack.avchmovie.data.model
 
-import androidx.room.ColumnInfo
-import androidx.room.Entity
-import androidx.room.PrimaryKey
 import com.google.gson.annotations.SerializedName
-import com.jetpack.avchmovie.common.Constants
-import java.util.*
 
-@Entity(tableName = "movies_list")
 data class Result(
-    @PrimaryKey
-    val lineId: UUID = UUID.randomUUID(),
-    @ColumnInfo(name = "backdrop_path")
     @SerializedName("backdrop_path")
-    val backdropPath: String,
-    @ColumnInfo(name = "first_air_date")
+    val backdropPath: String?,
     @SerializedName("first_air_date")
-    val firstAirDate: String,
-    @ColumnInfo(name = "genre_ids")
+    val firstAirDate: String?,
     @SerializedName("genre_ids")
-    val genreIds: List<Int>,
-    @ColumnInfo(name = "id")
+    val genreIds: List<Int>?,
     val id: Int,
-    @ColumnInfo(name = "name")
-    val name: String,
-    @ColumnInfo(name = "origin_country")
+    val name: String?,
     @SerializedName("origin_country")
-    val originCountry: List<String>,
-    @ColumnInfo(name = "original_language")
+    val originCountry: List<String>?,
     @SerializedName("original_language")
-    val originalLanguage: String,
-    @ColumnInfo(name = "original_name")
+    val originalLanguage: String?,
     @SerializedName("original_name")
-    val originalName: String,
-    @ColumnInfo(name = "overview")
-    val overview: String,
-    @ColumnInfo(name = "popularity")
-    val popularity: Double,
-    @ColumnInfo(name = "poster_path")
+    val originalName: String?,
+    val overview: String?,
+    val popularity: Double?,
     @SerializedName("poster_path")
-    val posterPath: String,
-    @ColumnInfo(name = "vote_average")
+    val posterPath: String?,
     @SerializedName("vote_average")
-    val voteAverage: Double,
-    @ColumnInfo(name = "vote_count")
+    val voteAverage: Double?,
     @SerializedName("vote_count")
-    val voteCount: Int,
-    @ColumnInfo(name = Constants.PAGE)
-    val page: Int,
+    val voteCount: Int?,
 )

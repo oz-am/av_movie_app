@@ -55,6 +55,5 @@ object AppModule {
     // provide movie repository
     @Singleton
     @Provides
-    fun providesMovieRepository(movieDatabaseDao: MovieDatabaseDao, movieDbApi: MovieDbApi): MovieRepository = MovieRepositoryImpl(movieDbApi, movieDatabaseDao)
-
+    fun providesMovieRepository(movieDatabaseDao: MovieDatabaseDao, movieDbApi: MovieDbApi, connectivity: ConnectionDetector): MovieRepository = MovieRepositoryImpl(movieDbApi, movieDatabaseDao, connectivity)
 }

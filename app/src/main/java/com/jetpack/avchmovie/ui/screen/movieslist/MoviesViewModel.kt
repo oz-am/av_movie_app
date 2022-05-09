@@ -20,7 +20,11 @@ class MoviesViewModel @Inject constructor(private val repository: MovieRepositor
     val state: State<MutableState<MovieResult>> = _state
 
     init {
-        repository.getMovies(1).onEach { result ->
+        getMovies(1)
+    }
+
+    fun getMovies(page: Int) {
+        repository.getMovies(page).onEach { result ->
             when (result) {
                 is Resource.Success -> { _state.value = MutableState(data = result.data) }
                 is Resource.Error -> { _state.value = MutableState(error = result.message ?: "An unexpected error occured") }

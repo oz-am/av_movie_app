@@ -21,6 +21,6 @@ class Converters {
 
     @TypeConverter
     fun toIntSource(source: String): List<Int> {
-        return source.split("<>").map { r -> r.toInt() }.toList()
+        return source.split("<>").filter { l -> l.isNotEmpty() }.map { r -> r.toInt() }.toList()
     }
 }
